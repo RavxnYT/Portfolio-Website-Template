@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { gsap } from "@/lib/gsap";
 import { siteConfig } from "@/config/site.config";
+import { getVisibleNavItems } from "@/lib/nav";
 import { useApp } from "./app-context";
 import { useTransitionNav } from "./TransitionRouter";
 
@@ -81,6 +82,8 @@ export function MenuOverlay() {
     setTimeout(() => navigate(href), 120);
   };
 
+  const navItems = getVisibleNavItems();
+
   return (
     <div
       ref={rootRef}
@@ -91,7 +94,7 @@ export function MenuOverlay() {
     >
       <div className="px-gutter flex h-full flex-col justify-between pb-10 pt-28">
         <nav className="flex flex-col">
-          {siteConfig.nav.map((item, i) => (
+          {navItems.map((item, i) => (
             <div key={item.href} className="overflow-hidden border-b border-line">
               <div data-menu-link className="will-change-transform">
                 <button
@@ -99,7 +102,7 @@ export function MenuOverlay() {
                   className="group flex w-full items-baseline gap-5 py-3 text-left md:gap-8"
                 >
                   <span className="text-label text-muted">
-                    0{i + 1}
+                    {item.index ?? "—"}
                   </span>
                   <span className="font-display text-display-lg uppercase transition-all duration-300 group-hover:translate-x-3 group-hover:text-accent">
                     {item.label}

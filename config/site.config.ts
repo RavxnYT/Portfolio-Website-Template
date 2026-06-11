@@ -62,6 +62,7 @@ export const siteConfig = {
     customCursor: true,
     noiseOverlay: true,
     scrollProgress: true,
+    sectionNavigator: true,
   },
 
   /* ------------------------------------------------------------------
@@ -103,11 +104,15 @@ export const siteConfig = {
    * 7. NAVIGATION & SOCIALS
    * ----------------------------------------------------------------*/
   nav: [
-    { label: "Work", href: "#work" },
-    { label: "Studio", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "#home" },
+    { label: "Studio", href: "#about", index: "01" },
+    { label: "Work", href: "#work", index: "02" },
+    { label: "Services", href: "#services", index: "03" },
+    { label: "Gallery", href: "#gallery", index: "04" },
+    { label: "Skills", href: "#skills", index: "05" },
+    { label: "Team", href: "#team", index: "06" },
+    { label: "Reviews", href: "#testimonials", index: "07" },
+    { label: "Contact", href: "#contact", index: "08" },
   ],
   socials: [
     { label: "Instagram", href: "https://instagram.com" },

@@ -99,6 +99,7 @@ export function Hero() {
 
   return (
     <section
+      id="home"
       ref={sectionRef}
       className="relative flex h-[100svh] min-h-[640px] flex-col overflow-hidden"
       aria-label="Intro"

@@ -13,6 +13,7 @@ import { Navbar } from "./Navbar";
 import { MenuOverlay } from "./MenuOverlay";
 import { Cursor } from "./Cursor";
 import { ScrollProgress } from "./ScrollProgress";
+import { SectionNavigator } from "./SectionNavigator";
 import { NoiseOverlay } from "./NoiseOverlay";
 
 /** Keeps ScrollTrigger in sync with Lenis (must live inside <ReactLenis>) */
@@ -60,6 +61,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           <Navbar />
           <MenuOverlay />
           {siteConfig.features.scrollProgress && <ScrollProgress />}
+          {siteConfig.features.sectionNavigator && <SectionNavigator />}
           {children}
           {siteConfig.features.customCursor && <Cursor />}
           {siteConfig.features.noiseOverlay && <NoiseOverlay />}
