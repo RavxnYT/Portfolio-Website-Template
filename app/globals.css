@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+ * Theme tokens — actual values are injected on <html> from
+ * config/site.config.ts. These map them into Tailwind utilities:
+ * bg-background, text-foreground, bg-surface, text-muted,
+ * bg-accent, text-accent-contrast, border-line, font-display, font-body
+ * ----------------------------------------------------------------*/
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-line: var(--line);
+  --font-display: var(--font-display-family), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-body-family), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Fallbacks (overridden by inline vars from the config) */
+:root {
+  --background: #0a0a0b;
+  --surface: #141417;
+  --foreground: #f2f1ed;
+  --muted: #8b8b93;
+  --accent: #d7ff3e;
+  --accent-contrast: #0a0a0b;
+  --line: rgba(242, 241, 237, 0.14);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--foreground) 22%, transparent);
+  border-radius: 8px;
+  border: 2px solid var(--background);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Hide native cursor when the custom cursor is active */
+html.cursor-custom,
+html.cursor-custom * {
+  cursor: none !important;
+}
+
+/* ------------------------------------------------------------------
+ * Utility classes used across the template
+ * ----------------------------------------------------------------*/
+
+/* Consistent horizontal gutters */
+.px-gutter {
+  padding-inline: clamp(1.25rem, 5vw, 6rem);
+}
+
+/* Outlined display text */
+.text-outline {
+  -webkit-text-stroke: 1.5px var(--foreground);
+  color: transparent;
+}
+.text-outline-accent {
+  -webkit-text-stroke: 1.5px var(--accent);
+  color: transparent;
+}
+
+/* Display sizes */
+.text-display-xl {
+  font-size: clamp(3.5rem, 13.5vw, 13rem);
+  line-height: 0.84;
+  letter-spacing: -0.02em;
+}
+.text-display-lg {
+  font-size: clamp(2.6rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.015em;
+}
+.text-display-md {
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* Small uppercase labels */
+.text-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Underline-on-hover link */
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.link-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hero headline chars start hidden (revealed by GSAP after preloader) */
+.char-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.char {
+  display: inline-block;
+  transform: translateY(120%);
+  will-change: transform;
+}
+
+/* SplitText masks */
+.split-line {
+  will-change: transform;
+}
+
+/* Pulsing availability dot */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Slow spin for decorative stars */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+/* Scroll-hint line */
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(220%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    transform: none;
+  }
+  .pulse-dot,
+  .spin-slow {
+    animation: none;
+  }
+}
