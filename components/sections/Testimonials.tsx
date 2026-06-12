@@ -92,7 +92,7 @@ export function Testimonials() {
       <SectionHeading
         index="07"
         label="Kind Words"
-        title="Clients say it better"
+        title="Clients & collaborators"
         aside={
           <div className="flex items-center gap-3 pb-2">
             <button

@@ -2,28 +2,28 @@ import type { Service } from "@/types/content";
 
 export const services: Service[] = [
   {
-    title: "Brand Identity",
+    title: "Web Development",
     description:
-      "Naming, visual identity, art direction and brand systems that scale from a business card to a billboard.",
-    deliverables: ["Logo & Identity", "Brand Guidelines", "Art Direction", "Naming & Tone"],
-  },
-  {
-    title: "Web Design & Development",
-    description:
-      "Award-grade marketing sites and e-commerce. Designed in Figma, built on Next.js, animated to the last pixel.",
-    deliverables: ["UI/UX Design", "Next.js Development", "E-Commerce", "CMS Integration"],
+      "Fast, responsive websites and web apps built with React, Next.js, and modern tooling — from landing pages to full platforms.",
+    deliverables: ["Next.js / React", "Responsive UI", "CMS Integration", "Performance Tuning"],
     highlight: true,
   },
   {
-    title: "3D & Motion",
+    title: "Mobile App Development",
     description:
-      "Real-time WebGL scenes, product visualisation and motion systems that make screens feel alive.",
-    deliverables: ["WebGL / Three.js", "3D Illustration", "Motion Design", "Lottie & Rive"],
+      "Cross-platform mobile apps with React Native — polished UI, smooth animations, and production-ready builds for iOS and Android.",
+    deliverables: ["React Native", "UI/UX Implementation", "Native Modules", "App Store Ready"],
   },
   {
-    title: "Digital Products",
+    title: "Play Store Products",
     description:
-      "From MVP to v2 — strategy, design systems and interfaces for apps and platforms that feel inevitable.",
-    deliverables: ["Product Strategy", "Design Systems", "Prototyping", "App Interfaces"],
+      "End-to-end app development and publishing — I've shipped my own app on Google Play and can take yours from prototype to live listing.",
+    deliverables: ["Android Development", "Play Store Publishing", "In-App Features", "Updates & Maintenance"],
+  },
+  {
+    title: "APIs & Backend",
+    description:
+      "RESTful APIs, authentication, databases, and server-side logic — the infrastructure that keeps your frontend fast and your data secure.",
+    deliverables: ["Node.js APIs", "Database Design", "Auth & Security", "Cloud Deployment"],
   },
 ];

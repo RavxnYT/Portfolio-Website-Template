@@ -78,7 +78,7 @@ export function About() {
       className="py-28 md:py-40"
       aria-label="About"
     >
-      <SectionHeading index="01" label={about.label} title="Studio with taste for detail" />
+      <SectionHeading index="01" label={about.label} title="Code-first, detail-obsessed" />
 
       <div className="px-gutter mt-16 grid gap-14 lg:grid-cols-12 lg:gap-10">
         {/* Sticky portrait */}

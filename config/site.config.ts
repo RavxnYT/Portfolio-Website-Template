@@ -6,29 +6,39 @@ export const siteConfig = {
    * 1. IDENTITY — who is this website for?
    * ----------------------------------------------------------------*/
   identity: {
-    name: "Lumen Studio",
-    logoText: "LUMEN®",
-    role: "Independent Creative Studio",
-    tagline: "We craft immersive digital experiences, brands and products that move people — and metrics.",
+    name: "Joe Boulos",
+    logoText: "RavXn®",
+    role: "Full-Stack Developer & App Builder",
+    tagline:
+      "I build websites, mobile apps, and products that ship — from first commit to Play Store launch.",
     email: "joeboulos94@gmail.com",
     phone: "+961 76 403 131",
     location: "Beirut, Lebanon",
     /** IANA timezone — powers the live local-time widget in the footer */
     timezone: "Asia/Beirut",
-    availability: "Accepting projects — Q3 2026",
+    availability: "Open to freelance & collabs — 2026",
   },
 
   /* ------------------------------------------------------------------
    * 2. SEO — metadata, open graph
    * ----------------------------------------------------------------*/
   seo: {
-    title: "Lumen Studio — Creative Digital Studio",
+    title: "Joe Boulos — Full-Stack Developer (RavXn®)",
     description:
-      "Lumen is an independent creative studio crafting immersive websites, brands and digital products. Design, 3D and development under one roof.",
-    url: "https://lumen.studio",
+      "Joe Boulos (RavXn) — full-stack developer building websites, mobile apps, and Play Store products. React, Next.js, React Native, and clean code that ships.",
+    url: "https://ravxn.dev",
     ogImage:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
-    keywords: ["creative studio", "web design", "portfolio", "3d", "branding"],
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
+    keywords: [
+      "developer",
+      "full-stack",
+      "web development",
+      "mobile apps",
+      "react",
+      "next.js",
+      "play store",
+      "portfolio",
+    ],
   },
 
   /* ------------------------------------------------------------------
@@ -77,11 +87,11 @@ export const siteConfig = {
     /** Only used when variant === "model". Put the file in /public/models */
     modelPath: "",
     modelScale: 1,
-    headline: ["LUMEN", "STUDIO®"],
+    headline: ["Joe", "Boulos"],
     /** Index of the headline line rendered as outlined text (-1 = none) */
     outlinedLine: 1,
     subline:
-      "Design, 3D and code under one roof. We build websites people screenshot and brands people remember.",
+      "Websites, mobile apps & Play Store products — shipped with clean code and zero fluff. RavXn® on the internet.",
     scrollHint: "Scroll",
   },
 
@@ -95,7 +105,7 @@ export const siteConfig = {
     services: true,
     gallery: true,
     skills: true,
-    team: true,
+    team: false,
     testimonials: true,
     contact: true,
   },
@@ -105,50 +115,49 @@ export const siteConfig = {
    * ----------------------------------------------------------------*/
   nav: [
     { label: "Home", href: "#home" },
-    { label: "Studio", href: "#about", index: "01" },
+    { label: "About", href: "#about", index: "01" },
     { label: "Work", href: "#work", index: "02" },
     { label: "Services", href: "#services", index: "03" },
     { label: "Gallery", href: "#gallery", index: "04" },
     { label: "Skills", href: "#skills", index: "05" },
-    { label: "Team", href: "#team", index: "06" },
-    { label: "Reviews", href: "#testimonials", index: "07" },
-    { label: "Contact", href: "#contact", index: "08" },
+    { label: "Reviews", href: "#testimonials", index: "06" },
+    { label: "Contact", href: "#contact", index: "07" },
   ],
   socials: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Behance", href: "https://behance.net" },
-    { label: "X / Twitter", href: "https://x.com" },
+    { label: "GitHub", href: "https://github.com" },
     { label: "LinkedIn", href: "https://linkedin.com" },
+    { label: "Play Store", href: "https://play.google.com/store" },
+    { label: "X / Twitter", href: "https://x.com" },
   ],
 
   /* ------------------------------------------------------------------
    * 8. MARQUEE — the scrolling strip under the hero
    * ----------------------------------------------------------------*/
   marquee: [
-    "Brand Identity",
-    "Web Design",
-    "3D & Motion",
-    "Development",
-    "Art Direction",
-    "E-Commerce",
+    "Web Development",
+    "Mobile Apps",
+    "React Native",
+    "Next.js",
+    "Play Store",
+    "APIs & Backend",
   ],
 
   /* ------------------------------------------------------------------
    * 9. CONTACT — the big CTA + form
    * ----------------------------------------------------------------*/
   contact: {
-    heading: ["HAVE AN", "IDEA?"],
-    sub: "Tell us about your project — timeline, budget, ambition. We answer within 24 hours.",
-    budgets: ["< $5k", "$5k – $15k", "$15k – $50k", "$50k +"],
-    cta: "Get in touch",
+    heading: ["LET'S", "BUILD"],
+    sub: "Need a website, app, or feature shipped? Tell me about your project — I reply within 24 hours.",
+    budgets: ["< $2k", "$2k – $8k", "$8k – $20k", "$20k +"],
+    cta: "Start a project",
   },
 
   /* ------------------------------------------------------------------
    * 10. FOOTER
    * ----------------------------------------------------------------*/
   footer: {
-    heading: "Let's create together",
-    note: "Crafted with obsession in Lebanon.",
+    heading: "Let's build something",
+    note: "Crafted with clean code in Lebanon.",
     /** Your credit as the developer — stays on every site you ship */
     developer: {
       name: "Joe Boulos",

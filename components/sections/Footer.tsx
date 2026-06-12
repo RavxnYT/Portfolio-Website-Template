@@ -164,7 +164,7 @@ export function Footer() {
               aria-hidden
               className="font-display pointer-events-none select-none overflow-hidden text-center text-[clamp(2.75rem,11vw,7.5rem)] uppercase leading-[0.85] opacity-[0.92]"
             >
-              {identity.name.split(" ")[0]}
+              {identity.logoText.replace(/®/g, "")}
               <Star className="mx-[0.08em] inline-block text-[0.32em] text-accent" />
             </div>
             <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-line pt-4 text-[11px] text-muted sm:text-xs md:mt-5 md:flex-row md:pt-5 md:text-sm">

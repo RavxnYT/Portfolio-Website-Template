@@ -1,20 +1,20 @@
 import type { Stat } from "@/types/content";
 
 export const about = {
-  label: "The Studio",
+  label: "About",
   /** The big opening statement — animated line by line */
   intro:
-    "Lumen is an independent creative studio crafting digital experiences at the intersection of design, technology and storytelling.",
+    "I'm Joe Boulos — RavXn to most — a full-stack developer who turns ideas into websites, mobile apps, and products live on the Play Store.",
   /** Supporting paragraph */
   body:
-    "From first sketch to final deploy, we partner with ambitious brands to build websites, products and identities that people remember. Strategy-led, detail-obsessed, performance-everything. No handoffs, no telephone games — the people you meet are the people who build.",
+    "From React dashboards to React Native apps, I write code that ships. No agency overhead, no handoffs — you talk to the person who builds it. Performance-first, TypeScript everywhere, and obsessed with the details users actually feel.",
   portrait:
-    "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1800&auto=format&fit=crop",
-  portraitAlt: "Inside the Lumen studio",
+    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1800&auto=format&fit=crop",
+  portraitAlt: "Joe Boulos at the desk",
   stats: [
-    { value: 8, suffix: "+", label: "Years of practice" },
-    { value: 140, suffix: "+", label: "Projects shipped" },
-    { value: 60, suffix: "+", label: "Happy clients" },
-    { value: 18, suffix: "", label: "Industry awards" },
+    { value: 6, suffix: "+", label: "Years coding" },
+    { value: 40, suffix: "+", label: "Projects shipped" },
+    { value: 1, suffix: "", label: "Play Store app" },
+    { value: 15, suffix: "+", label: "Happy clients" },
   ] satisfies Stat[],
 };

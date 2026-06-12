@@ -159,7 +159,7 @@ export function Projects() {
       <SectionHeading
         index="02"
         label="Selected Work"
-        title="Projects that ship and shine"
+        title="Selected builds & launches"
         aside={
           <span className="text-label pb-2 text-muted">
             ({String(projects.length).padStart(2, "0")}) — Scroll or use controls

@@ -6,48 +6,48 @@ import type { GalleryItem } from "@/types/content";
  */
 export const gallery: GalleryItem[] = [
   {
-    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop",
-    alt: "Abstract chrome render",
+    src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop",
+    alt: "Code on screen — VS Code",
     ratio: "portrait",
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1600&auto=format&fit=crop",
-    alt: "Mountain ridge at dusk",
+    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1600&auto=format&fit=crop",
+    alt: "Mobile app on iPhone",
     ratio: "landscape",
   },
   {
-    src: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=1600&auto=format&fit=crop",
-    alt: "Liquid color study",
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+    alt: "Analytics dashboard UI",
     ratio: "square",
   },
   {
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1600&auto=format&fit=crop",
-    alt: "Editorial portrait",
+    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop",
+    alt: "Developer workspace setup",
     ratio: "portrait",
   },
   {
-    src: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1600&auto=format&fit=crop",
-    alt: "Pigment abstraction",
+    src: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
+    alt: "App screens on multiple devices",
     ratio: "square",
   },
   {
-    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
-    alt: "Alpine panorama",
+    src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1600&auto=format&fit=crop",
+    alt: "Server room — backend infrastructure",
     ratio: "landscape",
   },
   {
-    src: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1600&auto=format&fit=crop",
-    alt: "Dark gradient field",
+    src: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1600&auto=format&fit=crop",
+    alt: "Terminal with deployment logs",
     ratio: "portrait",
   },
   {
-    src: "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=1600&auto=format&fit=crop",
-    alt: "Analog camera in hand",
+    src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1600&auto=format&fit=crop",
+    alt: "Team code review session",
     ratio: "square",
   },
   {
-    src: "https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=1600&auto=format&fit=crop",
-    alt: "Neon ink in motion",
+    src: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop",
+    alt: "Laptop with React project",
     ratio: "portrait",
   },
 ];

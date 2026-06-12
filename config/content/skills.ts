@@ -5,14 +5,14 @@ import type { Skill } from "@/types/content";
  * For a developer customer: tech stack. For a photographer: services.
  */
 export const skills: Skill[] = [
-  { name: "React & Next.js", category: "Development" },
-  { name: "TypeScript", category: "Development" },
-  { name: "Three.js / WebGL", category: "Creative Dev" },
-  { name: "GSAP / Motion", category: "Creative Dev" },
-  { name: "Node.js & APIs", category: "Backend" },
-  { name: "Tailwind CSS", category: "Development" },
-  { name: "Figma", category: "Design" },
-  { name: "Blender", category: "3D" },
-  { name: "Shopify / Headless", category: "E-Commerce" },
-  { name: "Vercel / Edge", category: "Infrastructure" },
+  { name: "React & Next.js", category: "Frontend" },
+  { name: "TypeScript", category: "Languages" },
+  { name: "React Native", category: "Mobile" },
+  { name: "Node.js & Express", category: "Backend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "REST & GraphQL APIs", category: "Backend" },
+  { name: "Firebase / Supabase", category: "Infrastructure" },
+  { name: "Git & CI/CD", category: "DevOps" },
+  { name: "Play Store Publishing", category: "Mobile" },
+  { name: "Figma → Code", category: "Workflow" },
 ];

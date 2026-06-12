@@ -152,7 +152,7 @@ export function Gallery() {
       <SectionHeading
         index="04"
         label="Visual Diary"
-        title="Between the projects"
+        title="Screenshots & snapshots"
         aside={
           <span className="text-label pb-2 text-muted">
             ({String(gallery.length).padStart(2, "0")}) — Click to expand

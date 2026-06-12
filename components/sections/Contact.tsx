@@ -107,7 +107,7 @@ export function Contact() {
             </a>
           </div>
           <div>
-            <p className="text-label mb-3 text-muted">Studio</p>
+            <p className="text-label mb-3 text-muted">Developer</p>
             <p className="text-lg">{identity.location}</p>
           </div>
           <div className="flex gap-6">

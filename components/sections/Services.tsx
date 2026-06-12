@@ -64,7 +64,7 @@ export function Services() {
       <SectionHeading
         index="03"
         label="What we do"
-        title="Services built around outcomes"
+        title="What I build for clients"
       />
 
       <div className="px-gutter mt-16 flex flex-col gap-[12vh]">
