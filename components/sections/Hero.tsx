@@ -115,7 +115,8 @@ export function Hero() {
       />
 
       {/* 3D layer */}
-      <div ref={canvasWrapRef} className="absolute inset-0 opacity-0">
+      {/* Isolate the 3D layer so blend modes elsewhere cannot wash out the page */}
+      <div ref={canvasWrapRef} className="absolute inset-0 isolate opacity-0">
         <HeroCanvas />
       </div>
 

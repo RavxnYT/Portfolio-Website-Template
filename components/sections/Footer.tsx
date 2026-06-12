@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
-import { gsap } from "@/lib/gsap";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { prefersReducedMotion } from "@/lib/animations";
 import { siteConfig } from "@/config/site.config";
 import { useTransitionNav } from "@/components/experience/TransitionRouter";
@@ -27,9 +27,8 @@ function LocalTime() {
 }
 
 /**
- * Footer — fixed behind the page; the content slides away to reveal it
- * (the "website lives under itself" effect). Rendered after <main>,
- * which must have `relative z-10 bg-background`.
+ * Footer — fixed behind the page; main content slides away to reveal it.
+ * Sized to fit within the viewport so nothing is clipped at the bottom.
  */
 export function Footer() {
   const spacerRef = useRef<HTMLDivElement>(null);
@@ -46,7 +45,7 @@ export function Footer() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         inner,
-        { yPercent: -22, autoAlpha: 0.4 },
+        { yPercent: -12, autoAlpha: 0.5 },
         {
           yPercent: 0,
           autoAlpha: 1,
@@ -64,22 +63,28 @@ export function Footer() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <>
-      {/* transparent window through which the fixed footer shows */}
-      <div ref={spacerRef} className="h-[88svh]" aria-hidden />
+      {/* Scroll room — matches footer height so the full block is reachable */}
+      <div ref={spacerRef} className="min-h-svh" aria-hidden />
 
       <footer
-        className="fixed bottom-0 left-0 right-0 z-0 flex h-[88svh] flex-col justify-between overflow-hidden"
+        className="fixed inset-x-0 bottom-0 z-0 min-h-svh"
         aria-label="Footer"
       >
         <div
           ref={innerRef}
-          className="px-gutter flex h-full flex-col justify-between pb-6 pt-16"
+          className="px-gutter flex min-h-svh flex-col pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-10 md:pb-8 md:pt-14"
         >
           {/* top: heading + back to top */}
-          <div className="flex items-start justify-between gap-8">
-            <h2 className="font-display text-display-md max-w-[16ch] uppercase">
+          <div className="flex shrink-0 items-start justify-between gap-6">
+            <h2 className="font-display text-3xl uppercase sm:text-4xl md:text-display-md max-w-[16ch]">
               {footer.heading}
             </h2>
             <Magnetic strength={0.4}>
@@ -87,23 +92,23 @@ export function Footer() {
                 onClick={() => lenis?.scrollTo(0, { duration: 1.8 })}
                 data-cursor
                 aria-label="Back to top"
-                className="flex h-16 w-16 items-center justify-center rounded-full border border-line text-xl transition-colors duration-300 hover:border-accent hover:text-accent md:h-20 md:w-20"
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line text-xl transition-colors duration-300 hover:border-accent hover:text-accent md:h-16 md:w-16"
               >
                 ↑
               </button>
             </Magnetic>
           </div>
 
-          {/* middle: columns */}
-          <div className="grid gap-10 py-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* middle: columns — compact on small screens */}
+          <div className="mt-8 grid shrink-0 gap-8 sm:grid-cols-2 sm:gap-x-10 lg:mt-10 lg:grid-cols-4 lg:gap-10">
             <div>
-              <p className="text-label mb-4 text-muted">Sitemap</p>
-              <ul className="flex flex-col gap-2.5">
+              <p className="text-label mb-3 text-muted md:mb-4">Sitemap</p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:flex sm:flex-col sm:gap-2.5">
                 {nav.map((item) => (
                   <li key={item.href}>
                     <button
                       onClick={() => navigate(item.href)}
-                      className="link-line text-base"
+                      className="link-line text-left text-sm md:text-base"
                     >
                       {item.label}
                     </button>
@@ -112,7 +117,7 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="text-label mb-4 text-muted">Socials</p>
+              <p className="text-label mb-3 text-muted md:mb-4">Socials</p>
               <ul className="flex flex-col gap-2.5">
                 {socials.map((s) => (
                   <li key={s.label}>
@@ -120,7 +125,7 @@ export function Footer() {
                       href={s.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="link-line text-base"
+                      className="link-line text-sm md:text-base"
                     >
                       {s.label}
                     </a>
@@ -129,41 +134,46 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="text-label mb-4 text-muted">Contact</p>
+              <p className="text-label mb-3 text-muted md:mb-4">Contact</p>
               <a
                 href={`mailto:${identity.email}`}
-                className="link-line block text-base"
+                className="link-line block break-all text-sm md:text-base"
               >
                 {identity.email}
               </a>
-              <p className="mt-2.5 text-base text-muted">{identity.phone}</p>
+              <p className="mt-2 text-sm text-muted md:mt-2.5 md:text-base">
+                {identity.phone}
+              </p>
             </div>
             <div>
-              <p className="text-label mb-4 text-muted">
+              <p className="text-label mb-3 text-muted md:mb-4">
                 {identity.location}
               </p>
-              <p className="font-display text-2xl tabular-nums">
+              <p className="font-display text-xl tabular-nums md:text-2xl">
                 <LocalTime />
               </p>
-              <p className="text-label mt-2 text-muted">Local time</p>
+              <p className="text-label mt-1.5 text-muted md:mt-2">
+                Local time
+              </p>
             </div>
           </div>
 
-          {/* bottom: giant name + legal */}
-          <div>
+          {/* bottom: wordmark + legal — always visible */}
+          <div className="mt-auto shrink-0 pt-8 md:pt-10">
             <div
               aria-hidden
-              className="font-display pointer-events-none select-none whitespace-nowrap text-center text-[15vw] uppercase leading-[0.78] opacity-[0.92]"
+              className="font-display pointer-events-none select-none overflow-hidden text-center text-[clamp(2.75rem,11vw,7.5rem)] uppercase leading-[0.85] opacity-[0.92]"
             >
               {identity.name.split(" ")[0]}
-              <Star className="mx-[1.5vw] inline-block text-[0.35em] text-accent" />
+              <Star className="mx-[0.08em] inline-block text-[0.32em] text-accent" />
             </div>
-            <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-line pt-5 text-xs text-muted md:flex-row">
-              <span>
-                © {new Date().getFullYear()} {identity.name}. All rights reserved.
+            <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-line pt-4 text-[11px] text-muted sm:text-xs md:mt-5 md:flex-row md:pt-5 md:text-sm">
+              <span className="text-center md:text-left">
+                © {new Date().getFullYear()} {identity.name}. All rights
+                reserved.
               </span>
-              <span>{footer.note}</span>
-              <span>
+              <span className="text-center">{footer.note}</span>
+              <span className="text-center md:text-right">
                 Developed by{" "}
                 {footer.developer.url ? (
                   <a
@@ -175,7 +185,9 @@ export function Footer() {
                     {footer.developer.name}
                   </a>
                 ) : (
-                  <span className="text-foreground">{footer.developer.name}</span>
+                  <span className="text-foreground">
+                    {footer.developer.name}
+                  </span>
                 )}{" "}
                 — {footer.developer.location}
               </span>

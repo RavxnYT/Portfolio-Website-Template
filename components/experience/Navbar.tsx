@@ -46,9 +46,9 @@ export function Navbar() {
   return (
     <header
       ref={barRef}
-      className="fixed inset-x-0 top-0 z-[110] -translate-y-[130%] mix-blend-difference"
+      className="fixed inset-x-0 top-0 z-[110] -translate-y-[130%] border-b border-line/60 bg-background/75 backdrop-blur-md"
     >
-      <nav className="px-gutter flex h-20 items-center justify-between text-white">
+      <nav className="px-gutter flex h-20 items-center justify-between text-foreground">
         <button
           onClick={() => navigate("/")}
           className="font-display text-lg font-bold uppercase tracking-[0.18em]"
@@ -69,13 +69,13 @@ export function Navbar() {
           <span className="relative flex h-10 w-10 items-center justify-center">
             <span
               className={cn(
-                "absolute h-px w-6 bg-white transition-all duration-300",
+                "absolute h-px w-6 bg-foreground transition-all duration-300",
                 menuOpen ? "rotate-45" : "-translate-y-[4px] group-hover:-translate-y-[6px]"
               )}
             />
             <span
               className={cn(
-                "absolute h-px w-6 bg-white transition-all duration-300",
+                "absolute h-px w-6 bg-foreground transition-all duration-300",
                 menuOpen ? "-rotate-45" : "translate-y-[4px] group-hover:translate-y-[6px]"
               )}
             />
